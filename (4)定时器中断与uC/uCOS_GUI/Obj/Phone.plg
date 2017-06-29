@@ -1,0 +1,397 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Phone\Desktop\(3)消息队列\uCOS_GUI\Project\Phone.uvproj
+Project File Date:  02/25/2014
+
+<h2>Output:</h2>
+Build target 'uCOS_GUI'
+linking...
+Program Size: Code=51494 RO-data=25706 RW-data=472 ZI-data=15784  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 0 Warning(s).
+Load "..\\Obj\\Phone.AXF" 
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+Set JLink Project File to "C:\Users\Phone\Desktop\(3)消息队列\uCOS_GUI\Project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Aug  1 2012 13:40:47
+Hardware: V8.00
+S/N : 58001139 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.313V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'uCOS_GUI'
+compiling App.c...
+..\Source\APP\App.c(62): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(125): error:  #20: identifier "MsgQueue" is undefined
+..\Source\APP\App.c(125): error:  #20: identifier "MsgQueueTbl" is undefined
+..\Source\APP\App.c(124): warning:  #177-D: variable "err" was declared but never referenced
+Target not created
+Build target 'uCOS_GUI'
+compiling App.c...
+..\Source\APP\App.c(62): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(124): warning:  #177-D: variable "err" was declared but never referenced
+linking...
+Program Size: Code=51350 RO-data=25706 RW-data=472 ZI-data=15704  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 2 Warning(s).
+Build target 'uCOS_GUI'
+compiling App.c...
+..\Source\APP\App.c(62): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(122): warning:  #177-D: variable "err" was declared but never referenced
+compiling Face.c...
+..\Source\ITFace\Face.c(31): warning:  #260-D: explicit type is missing ("int" assumed)
+..\Source\ITFace\Face.c(74): warning:  #177-D: variable "hWin" was declared but never referenced
+linking...
+Program Size: Code=51378 RO-data=25706 RW-data=472 ZI-data=15704  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 4 Warning(s).
+Load "..\\Obj\\Phone.AXF" 
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+Set JLink Project File to "C:\Users\Phone\Desktop\(3)消息队列\uCOS_GUI\Project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Aug  1 2012 13:40:47
+Hardware: V8.00
+S/N : 58001139 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.313V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'uCOS_GUI'
+compiling Face.c...
+..\Source\ITFace\Face.c(74): warning:  #177-D: variable "hWin" was declared but never referenced
+linking...
+Program Size: Code=51350 RO-data=25706 RW-data=472 ZI-data=15704  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 1 Warning(s).
+Load "..\\Obj\\Phone.AXF" 
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+Set JLink Project File to "C:\Users\Phone\Desktop\(3)消息队列\uCOS_GUI\Project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Aug  1 2012 13:40:47
+Hardware: V8.00
+S/N : 58001139 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.313V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'uCOS_GUI'
+compiling App.c...
+..\Source\APP\App.c(62): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(122): warning:  #177-D: variable "err" was declared but never referenced
+linking...
+Program Size: Code=51314 RO-data=25706 RW-data=468 ZI-data=15708  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 2 Warning(s).
+Load "..\\Obj\\Phone.AXF" 
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+Set JLink Project File to "C:\Users\Phone\Desktop\(3)消息队列\uCOS_GUI\Project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Aug  1 2012 13:40:47
+Hardware: V8.00
+S/N : 58001139 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.313V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'uCOS_GUI'
+compiling bsp.c...
+..\Source\BSP\bsp.c(12): warning:  #1295-D: Deprecated declaration timer_init3 - give arg types
+linking...
+Program Size: Code=51314 RO-data=25706 RW-data=468 ZI-data=15708  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 1 Warning(s).
+Load "..\\Obj\\Phone.AXF" 
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+Set JLink Project File to "C:\Users\Phone\Desktop\(3)消息队列\uCOS_GUI\Project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Aug  1 2012 13:40:47
+Hardware: V8.00
+S/N : 58001139 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.313V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'uCOS_GUI'
+compiling bsp.c...
+..\Source\BSP\bsp.c(12): warning:  #1295-D: Deprecated declaration timer_init3 - give arg types
+linking...
+Program Size: Code=51314 RO-data=25706 RW-data=468 ZI-data=15708  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 1 Warning(s).
+Load "..\\Obj\\Phone.AXF" 
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+Set JLink Project File to "C:\Users\Phone\Desktop\(3)消息队列\uCOS_GUI\Project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Aug  1 2012 13:40:47
+Hardware: V8.00
+S/N : 58001139 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.313V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'uCOS_GUI'
+compiling App.c...
+..\Source\APP\App.c(62): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(122): warning:  #177-D: variable "err" was declared but never referenced
+compiling bsp.c...
+..\Source\BSP\bsp.c(12): warning:  #1295-D: Deprecated declaration timer_init3 - give arg types
+..\Source\BSP\bsp.c(35): warning:  #223-D: function "timer_init" declared implicitly
+..\Source\BSP\bsp.c(84): error:  #159: declaration is incompatible with previous "timer_init" (declared at line 35)
+Target not created
+Build target 'uCOS_GUI'
+compiling bsp.c...
+..\Source\BSP\bsp.c(12): warning:  #1295-D: Deprecated declaration timer_init - give arg types
+linking...
+Program Size: Code=51314 RO-data=25706 RW-data=468 ZI-data=15708  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 1 Warning(s).
+Load "..\\Obj\\Phone.AXF" 
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+Set JLink Project File to "C:\Users\Phone\Desktop\(3)消息队列\uCOS_GUI\Project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Aug  1 2012 13:40:47
+Hardware: V8.00
+S/N : 58001139 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.313V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'uCOS_GUI'
+compiling App.c...
+..\Source\APP\App.c(62): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(122): warning:  #177-D: variable "err" was declared but never referenced
+linking...
+Program Size: Code=50906 RO-data=25706 RW-data=468 ZI-data=15708  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 2 Warning(s).
+Load "..\\Obj\\Phone.AXF" 
+* JLink Info: Device "STM32F103VE" selected (512 KB flash, 64 KB RAM).
+Set JLink Project File to "C:\Users\Phone\Desktop\(3)消息队列\uCOS_GUI\Project\JLinkSettings.ini"
+ 
+JLink info:
+------------
+DLL: V4.35b, compiled Sep  2 2011 18:34:46
+Firmware: J-Link ARM V8 compiled Aug  1 2012 13:40:47
+Hardware: V8.00
+S/N : 58001139 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F103VE
+VTarget = 3.313V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          0
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.

@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Phone\Desktop\1科技文化节\(7)uCOS_GUI_GSM\1 - 副本\uCOS_GUI\Project\Phone.uvproj
+Project File Date:  04/01/2014
+
+<h2>Output:</h2>
+Build target 'uCOS_GUI'
+compiling App.c...
+..\Source\APP\App.c(74): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(136): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(238): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(251): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(272): warning:  #177-D: variable "err" was declared but never referenced
+linking...
+Program Size: Code=38122 RO-data=97150 RW-data=548 ZI-data=17812  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 5 Warning(s).

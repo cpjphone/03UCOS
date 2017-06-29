@@ -1,0 +1,214 @@
+#include "..\App\includes.h"
+extern void USART_Config(USART_TypeDef* USARTx,u32 baud);		  //声明外部变量
+/*
+*********************************************************************************************************
+
+*/
+
+/*******************************************************************************
+* Function Name  : RCC_Configuration
+* Description    : Configures the different system clocks.
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+
+////////////////////////////////////////////////////////
+void RCC_Configuration(void)
+{	
+	
+	
+  SystemInit(); 
+	/*startup_stm32f10x_cl.s（启动文件） → SystemInit() →  SetSysClock () → SetSysClockTo72()，详解见文档*/
+
+}
+
+//关闭调试接口，作GPIO使用
+void UnableJTAG(void)
+{
+   
+   RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;                     // enable clock for Alternate Function
+   AFIO->MAPR &= ~(7UL<<24); // clear used bit
+   AFIO->MAPR |= (4UL<<24); // set used bits
+}
+
+/*******************************************************************************
+* Function Name  : GPIO_Configuration
+* Description    : PB5: LED1 (mini and V3)
+                   PD6：LED2 (only V3)
+				   PD3：LED3 (only V3)
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void GPIO_Configuration(void)
+{
+  GPIO_InitTypeDef GPIO_InitStructure;
+
+  /*对控制LED指示灯的IO口进行了初始化，将端口配置为推挽上拉输出，口线速度为50Mhz。PA9,PA10端口复用为串口1的TX，RX。
+  在配置某个口线时，首先应对它所在的端口的时钟进行使能。否则无法配置成功，由于用到了端口B，D,E， 因此要对这几个端口的时钟
+  进行使能，同时由于用到复用IO口功能用于配置串口。因此还要使能AFIO（复用功能IO）时钟。*/
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA |RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
+
+	GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_1 | GPIO_Pin_11;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;		 //推挽输出
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;  // 选择所有脚
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;  //配置成推挽式输出
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; //输出模式下 I/O输出速度 50M HZ
+  GPIO_Init(GPIOA, &GPIO_InitStructure);  //初始化PB口
+	
+	/* 第2步：将USART Tx的GPIO配置为推挽复用模式 */
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	
+	/* 第3步：将USART Rx的GPIO配置为浮空输入模式
+		由于CPU复位后，GPIO缺省都是浮空输入模式，因此下面这个步骤不是必须的
+		但是，我还是建议加上便于阅读，并且防止其它地方修改了这个口线的设置参数
+	*/
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	/*  第3步已经做了，因此这步可以不做
+		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	*/
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;				                 //LED1
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);					 
+  
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6|GPIO_Pin_3;		 			//LED2, LED3
+  GPIO_Init(GPIOD, &GPIO_InitStructure);
+	
+}
+
+
+/*******************************************************************************
+* Function Name  : NVIC_Configuration
+* Description    : Configures Vector Table base location.
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void NVIC_Configuration(void)
+{
+
+  NVIC_InitTypeDef NVIC_InitStructure;
+  
+   /* Set the Vector Table base location at 0x08000000 */
+   NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0);
+  
+   /* Configure the NVIC Preemption Priority Bits */  
+   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+  
+   /* Enable the USART1 Interrupt */
+   NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;       //通道设置为串口1中断
+   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;	   //中断响应优先级0
+   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;		   //打开中断
+   NVIC_Init(&NVIC_InitStructure); 		
+ 
+}
+
+/************************************************************************/
+//初始化串口硬件设备，启用中断
+/************************************************************************/
+void USART1_Configuration(void)
+{
+	//GPIO_InitTypeDef GPIO_InitStructure;
+	USART_InitTypeDef USART_InitStructure;
+
+	/* 第1步：打开GPIO和USART部件的时钟 */
+	
+
+	/* 第4步：配置USART1参数
+	    - BaudRate = 115200 baud
+	    - Word Length = 8 Bits
+	    - One Stop Bit
+	    - No parity
+	    - Hardware flow control disabled (RTS and CTS signals)
+	    - Receive and transmit enabled
+	*/
+	USART_InitStructure.USART_BaudRate = 9600;
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;
+	USART_InitStructure.USART_Parity = USART_Parity_No;
+	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	USART_Init(USART2, &USART_InitStructure);
+
+    /* 若接收数据寄存器满，则产生中断 */
+  USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+
+	/* 第5步：使能 USART1， 配置完毕 */
+	USART_Cmd(USART2, ENABLE);
+
+    /* 如下语句解决第1个字节无法正确发送出去的问题 */
+  USART_ClearFlag(USART2, USART_FLAG_TC);     // 清标志
+}
+
+void BSP_Init(void)
+{
+  /* System Clocks Configuration --72M*/
+  RCC_Configuration();   
+
+  GPIO_Configuration();
+  
+  /* NVIC configuration */
+  /*嵌套向量中断控制器 
+      说明了USART1抢占优先级级别0（最多1位） ，和子优先级级别0（最多7位） */ 
+  NVIC_Configuration();
+	
+  USART1_Configuration();
+	//GSMconf();
+  //USART_Config(USART1,115200);		  //串口1初始化
+  
+}
+
+
+
+////SYSTICK 配置， 10ms一次systick中断，产生ucos 调度节拍， 1KHz
+void  OS_CPU_SysTickInit(void)
+{
+    RCC_ClocksTypeDef  rcc_clocks;
+    INT32U         cnts;
+
+
+    RCC_GetClocksFreq(&rcc_clocks);
+
+    cnts = (INT32U)rcc_clocks.HCLK_Frequency/OS_TICKS_PER_SEC;
+
+	SysTick_Config(cnts);
+
+  
+}
+
+
+#ifdef  DEBUG
+/*******************************************************************************
+* Function Name  : assert_failed
+* Description    : Reports the name of the source file and the source line number
+*                  where the assert_param error has occurred.
+* Input          : - file: pointer to the source file name
+*                  - line: assert_param error line source number
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void assert_failed(u8* file, u32 line)
+{ 
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+
+  /* Infinite loop */
+  while (1)
+  {
+  }
+}
+#endif
+
+/******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE****/
+

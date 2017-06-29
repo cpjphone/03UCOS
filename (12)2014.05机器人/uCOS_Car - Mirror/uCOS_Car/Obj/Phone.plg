@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Phone\Desktop\uCOS_Car - Mirror\uCOS_Car\Project\Phone.uvproj
+Project File Date:  05/07/2014
+
+<h2>Output:</h2>
+Build target 'uCOS_Car'
+compiling condition.c...
+linking...
+Program Size: Code=10818 RO-data=594 RW-data=128 ZI-data=12216  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 0 Warning(s).
+Build target 'uCOS_Car'
+compiling App.c...
+..\Source\APP\App.c(105): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(178): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(217): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(230): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(255): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(280): warning:  #177-D: variable "err" was declared but never referenced
+compiling condition.c...
+linking...
+Program Size: Code=12838 RO-data=594 RW-data=132 ZI-data=12220  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 6 Warning(s).
+Build target 'uCOS_Car'
+linking...
+Program Size: Code=12838 RO-data=594 RW-data=132 ZI-data=12220  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 0 Warning(s).

@@ -1,0 +1,14 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+F:\(9)程序备份\2014.5省机器人\uCOS_Car.5.11.15.42\uCOS_Car\Project\Phone.uvproj
+Project File Date:  05/07/2014
+
+<h2>Output:</h2>
+Build target 'uCOS_Car'
+linking...
+Program Size: Code=11494 RO-data=594 RW-data=136 ZI-data=8632  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 0 Warning(s).

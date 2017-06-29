@@ -1,0 +1,29 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+F:\1科技文化节\(7)uCOS_GUI_oneCHild\uCOS_GUI\Project\Phone.uvproj
+Project File Date:  04/10/2014
+
+<h2>Output:</h2>
+Build target 'uCOS_GUI'
+compiling App.c...
+..\Source\APP\App.c(80): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(140): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(230): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(263): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(300): warning:  #223-D: function "NRF24L01_Init" declared implicitly
+..\Source\APP\App.c(305): warning:  #223-D: function "NRF24L01_Check" declared implicitly
+..\Source\APP\App.c(311): warning:  #223-D: function "RX_Mode" declared implicitly
+..\Source\APP\App.c(314): warning:  #223-D: function "NRF24L01_RxPacket" declared implicitly
+..\Source\APP\App.c(340): warning:  #223-D: function "TX_Mode" declared implicitly
+..\Source\APP\App.c(361): warning:  #223-D: function "NRF24L01_TxPacket" declared implicitly
+..\Source\APP\App.c(286): warning:  #177-D: variable "err" was declared but never referenced
+..\Source\APP\App.c(290): warning:  #550-D: variable "temp2" was set but never used
+..\Source\APP\App.c(290): warning:  #177-D: variable "temp3" was declared but never referenced
+..\Source\APP\App.c(290): warning:  #177-D: variable "temp4" was declared but never referenced
+linking...
+Program Size: Code=37150 RO-data=97162 RW-data=392 ZI-data=17728  
+FromELF: creating hex file...
+"..\Obj\Phone.axf" - 0 Error(s), 14 Warning(s).
